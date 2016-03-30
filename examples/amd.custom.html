@@ -1,0 +1,87 @@
+<html>
+<head>
+<!--
+This example demonstrates how to consume the Scribe
+editor using RequireJS and the AMD module syntax.
+
+Note that you'll need to install scribe's dependencies through
+`bower install`. See http://bower.io/ if you are unfamiliar.
+-->
+<style>
+  button {
+    height: 3em;
+  }
+
+  .active {
+    border-style: inset;
+  }
+
+  .rte, .rte-toolbar {
+    display: block;
+  }
+
+  p {
+    margin-top: 0;
+  }
+
+  .split {
+    width: 27.5%;
+    margin:2.5%;
+    float:left;
+  }
+
+  .rte {
+    border: 1px solid gray;
+    height: 300px;
+    overflow: auto;
+
+  }
+
+  .clearfix {
+    clear: both;
+  }
+  .rte-output {
+
+    width: 100%;
+    height: 10em;
+  }
+
+
+</style>
+</head>
+<body>
+
+<div class="rte-toolbar">
+  <button data-command-name="bold">Bold</button>
+  <button data-command-name="linkPrompt">Link</button>
+  <button data-command-name="h2">H2</button>
+</div>
+<div class="split">
+  No blocks Allowed:  &lt;B&gt;, &lt;I&gt;, &lt;BR&gt;, &lt;A&gt;
+  <div class="rte rte1" tabindex="1"></div>
+</div>
+<div class="split">
+  Blocks! Allowed:  &lt;B&gt;, &lt;I&gt;, &lt;BR&gt;, &lt;A&gt;, &lt;P&gt; &lt;H2&gt;
+  <div class="rte rte2" tabindex="1"></div>
+</div>
+<div class="split">
+  Blocks! Allowed:  &lt;B&gt;, &lt;I&gt;, &lt;BR&gt;, &lt;A&gt;, &lt;P&gt; &lt;H2&gt;
+  <div class="rte rte3" tabindex="1"></div>
+</div>
+<section class="clearfix">
+  <h1>Output</h1>
+  <textarea class="rte-output" readonly></textarea>
+</section>
+<script src="../bower_components/requirejs/require.js" data-main="main.js"></script>
+<script type="text/javascript">
+  requirejs.config({
+    paths: {
+      'jquery' : '../bower_components/jquery/dist/jquery.min',
+      'scribe-common': '../bower_components/scribe-common',
+      'lodash-amd': '../bower_components/lodash-amd',
+      'html-janitor':  '../bower_components/html-janitor/html-janitor'
+    }
+  });
+</script>
+</body>
+</html>

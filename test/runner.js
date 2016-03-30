@@ -19,11 +19,23 @@ var mocha = new Mocha();
  */
 mocha.timeout(15 * 1000);
 mocha.reporter('spec');
-mocha.addFile(__dirname + '/block-mode.spec.js');
-mocha.addFile(__dirname + '/commands.spec.js');
-mocha.addFile(__dirname + '/formatters.spec.js');
-mocha.addFile(__dirname + '/inline-elements-mode.spec.js');
-mocha.addFile(__dirname + '/patches.spec.js');
-mocha.addFile(__dirname + '/undo-manager.spec.js');
+// mocha.addFile(__dirname + '/block-mode.spec.js');
+// mocha.addFile(__dirname + '/commands.spec.js');
+// mocha.addFile(__dirname + '/formatters.spec.js');
+// mocha.addFile(__dirname + '/inline-elements-mode.spec.js');
+// mocha.addFile(__dirname + '/patches.spec.js');
+// mocha.addFile(__dirname + '/undo-manager.spec.js');
+
+
+
+
+mocha.addFile(__dirname + '/custom/block-mode.spec.js');
+mocha.addFile(__dirname + '/custom/commands.spec.js');
+mocha.addFile(__dirname + '/custom/formatters.spec.js');
+mocha.addFile(__dirname + '/custom/inline-elements-mode.spec.js');
+mocha.addFile(__dirname + '/custom/patches.spec.js');
+mocha.addFile(__dirname + '/custom/undo-manager.spec.js');
+mocha.addFile(__dirname + '/custom/sanitizer.spec.js');
+
 
 createRunner(mocha);
